@@ -1,0 +1,98 @@
+<resources>
+    <string name="app_name">Cryptocomp</string>
+
+    <string name="no_internet_connection">No internet connection.</string>
+
+    <string name="cards">Currency Cards</string>
+
+    <string name="conversion">Conversion</string>
+
+    <string name="menu_refresh">Refresh</string>
+
+    <string name="no_crypto_data">No Cryptocomp Data Found.</string>
+
+    <string name="spinner_title">Bitcoin</string>
+
+    <string name="convert">Convert</string>
+
+    <string name="eth_hint">ETH: </string>
+    <string name="btc_hint">BTC: </string>
+
+    <string name="from_eth">From ETH: </string>
+    <string name="from_btc">From BTC: </string>
+    <string name="to">TO: </string>
+    <string name="dec_value">0.00</string>
+
+    <string name="clear">Clear</string>
+
+    <string-array name="crypto_array">
+        <item>BTC</item>
+        <item>ETH</item>
+    </string-array>
+
+    <string-array name="currency_array">
+        <item>NGN</item>
+        <item>USD</item>
+        <item>EUR</item>
+        <item>GBP</item>
+        <item>JPY</item>
+        <item>CNY</item>
+        <item>CHF</item>
+        <item>CAD</item>
+        <item>AUD</item>
+        <item>NZD</item>
+        <item>ZAR</item>
+        <item>INR</item>
+        <item>RUB</item>
+        <item>KRW</item>
+        <item>SEK</item>
+        <item>BRL</item>
+        <item>MXN</item>
+        <item>SGD</item>
+        <item>PLN</item>
+        <item>TRY</item>
+    </string-array>
+
+    <string name="eth_nig">ETH to NGN</string>
+    <string name="eth_usd">ETH to USD</string>
+    <string name="eth_eur">ETH to EUR</string>
+    <string name="eth_gbp">ETH to GBP</string>
+    <string name="eth_jpy">ETH to JPY</string>
+    <string name="eth_cny">ETH to CNY</string>
+    <string name="eth_chf">ETH to CHF</string>
+    <string name="eth_cad">ETH to CAD</string>
+    <string name="eth_aud">ETH to AUD</string>
+    <string name="eth_nzd">ETH to NZD</string>
+    <string name="eth_zar">ETH to ZAR</string>
+    <string name="eth_inr">ETH to INR</string>
+    <string name="eth_rub">ETH to RUB</string>
+    <string name="eth_krw">ETH to KRW</string>
+    <string name="eth_sek">ETH to SEK</string>
+    <string name="eth_brl">ETH to BRL</string>
+    <string name="eth_mxn">ETH to MXN</string>
+    <string name="eth_sgd">ETH to SGD</string>
+    <string name="eth_pln">ETH to PLN</string>
+    <string name="eth_try">ETH to TRY</string>
+
+    <string name="btc_nig">BTC to NGN</string>
+    <string name="btc_usd">BTC to USD</string>
+    <string name="btc_eur">BTC to EUR</string>
+    <string name="btc_gbp">BTC to GBP</string>
+    <string name="btc_jpy">BTC to JPY</string>
+    <string name="btc_cny">BTC to CNY</string>
+    <string name="btc_chf">BTC to CHF</string>
+    <string name="btc_cad">BTC to CAD</string>
+    <string name="btc_aud">BTC to AUD</string>
+    <string name="btc_nzd">BTC to NZD</string>
+    <string name="btc_zar">BTC to ZAR</string>
+    <string name="btc_inr">BTC to INR</string>
+    <string name="btc_rub">BTC to RUB</string>
+    <string name="btc_krw">BTC to KRW</string>
+    <string name="btc_sek">BTC to SEK</string>
+    <string name="btc_brl">BTC to BRL</string>
+    <string name="btc_mxn">BTC to MXN</string>
+    <string name="btc_sgd">BTC to SGD</string>
+    <string name="btc_pln">BTC to PLN</string>
+    <string name="btc_try">BTC to TRY</string>
+</resources>
+

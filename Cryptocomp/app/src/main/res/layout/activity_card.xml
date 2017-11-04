@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linear_layout"
+    android:background="#6f80e1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:background="@color/tan_background"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <RelativeLayout
+                android:id="@+id/eth_container"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@color/tan_background"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:textColor="@color/faded_black">
+
+                <ImageView
+                    android:id="@+id/eth_logo"
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:scaleType="centerCrop"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/eth_logo" />
+
+                <LinearLayout
+                    android:id="@+id/eth_amount_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/eth_logo"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/eth_tag"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@color/faded_black"
+                        android:layout_centerHorizontal="true"
+                        android:textStyle="bold"
+                        tools:text="GBP "/>
+
+                    <TextView
+                        android:id="@+id/eth_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_centerHorizontal="true"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textStyle="bold"
+                        tools:text="234" />
+                </LinearLayout>
+
+                    <Button
+                        android:layout_below="@id/eth_amount_container"
+                        android:text="@string/convert"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/button_shape"
+                        android:shadowColor="#cec40e"
+                        android:shadowDx="4"
+                        android:shadowDy="1"
+                        android:shadowRadius="3"
+                        android:textColor="#000000"
+                        android:textSize="38sp"
+                        android:textStyle="bold"
+                        android:id="@+id/eth_button"
+                        android:layout_width="197dp"
+                        android:layout_height="58dp"
+                        android:textAllCaps="false" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#000000"/>
+            <RelativeLayout
+                android:id="@+id/btc_container"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@color/tan_background"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:textColor="@color/faded_black">
+
+                <ImageView
+                    android:id="@+id/btc_logo"
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:scaleType="centerCrop"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/btc_logo" />
+
+                <LinearLayout
+                    android:id="@+id/btc_amount_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btc_logo"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/btc_tag"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@color/faded_black"
+                        android:layout_centerHorizontal="true"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/btc_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@color/colorAccent"
+                        android:textColorHint="@color/light_blue"
+                        android:gravity="center_horizontal"
+                        android:textStyle="bold"
+                        tools:text="234" />
+                </LinearLayout>
+
+                    <Button
+                        android:layout_below="@id/btc_amount_container"
+                        android:text="@string/convert"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/button_shape"
+                        android:shadowColor="#cec40e"
+                        android:shadowDx="4"
+                        android:shadowDy="1"
+                        android:shadowRadius="3"
+                        android:textColor="#000000"
+                        android:textSize="38sp"
+                        android:textStyle="bold"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:id="@+id/btc_button"
+                        android:layout_width="197dp"
+                        android:layout_height="58dp"
+                        android:textAllCaps="false" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

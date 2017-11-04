@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="tan_background">#FFF7DA</color>
+    <color name="light_blue">#16AFCA</color>
+    <color name="orange">#FD8E09</color>
+    <color name="purple">#8800A0</color>
+    <color name="faded_black">#2B3D4D</color>
+    <color name="eth_background">#bff7f1</color>
+    <color name="btc_background">#bbfad5f7</color>
+</resources>
