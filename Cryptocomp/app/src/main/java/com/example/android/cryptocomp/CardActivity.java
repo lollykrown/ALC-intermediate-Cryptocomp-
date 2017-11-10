@@ -34,8 +34,7 @@ public class CardActivity  extends AppCompatActivity {
         TextView ethAmountTextView = findViewById(R.id.eth_amount);
         TextView btcCurrencyTag = findViewById(R.id.btc_tag);
         TextView ethCurrencyTag = findViewById(R.id.eth_tag);
-        Button btcButton = findViewById(R.id.btc_button);
-        Button ethButton = findViewById(R.id.eth_button);
+        Button convertButton = findViewById(R.id.convert_btn);
 
         //load shared pref data
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
@@ -52,25 +51,13 @@ public class CardActivity  extends AppCompatActivity {
         btcCurrencyTag.setText(btc_tag);
         ethCurrencyTag.setText(eth_tag);
 
-        btcButton.setOnClickListener(new View.OnClickListener() {
+        convertButton.setOnClickListener(new View.OnClickListener() {
             // The code in this method will be executed when the colors category is clicked on.
             @Override
             public void onClick(View view) {
                 // Create a new intent to open the {@link ConversionActivity}
                 Intent i = new Intent(CardActivity.this, ConversionActivity.class);
 
-
-                // Start the new activity
-                startActivity(i);
-            }
-        });
-
-        ethButton.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the colors category is clicked on.
-            @Override
-            public void onClick(View view) {
-                // Create a new intent to open the {@link ConversionActivity}
-                Intent i = new Intent(CardActivity.this, ConversionActivity.class);
 
                 // Start the new activity
                 startActivity(i);
@@ -87,10 +74,16 @@ public class CardActivity  extends AppCompatActivity {
         startActivity(intent);
     }
 
+    Menu menu;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        this.menu = menu;
         // inflate the menu; this adds items to the action bar if it is present
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        MenuItem pinMenuItem2 = menu.findItem(R.id.refresh);
+
+        pinMenuItem2.setVisible(false);
         return true;
     }
 

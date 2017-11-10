@@ -28,7 +28,7 @@
                 android:value=".MainActivity"/>
         </activity>
         <activity android:name=".ConversionActivity"
-            android:label="@string/cards">
+            android:label="@string/conversion">
             android:parentActivityName=".MainActivity">
             <!--parent activity meta-data to support 4.0 and lower -->
             <meta-data

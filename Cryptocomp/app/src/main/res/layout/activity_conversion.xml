@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/orange"
     android:orientation="vertical"
     android:padding="24dp">
 
@@ -67,7 +68,7 @@
 
                 <TextView
                     android:id="@+id/eth_result"
-                    android:layout_width="128dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/dec_value"
                     android:textAppearance="?android:textAppearanceMedium"
@@ -76,7 +77,7 @@
 
                 <Spinner
                     android:id="@+id/eth_spinner"
-                    android:layout_width="63dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="42dp"
 
                     android:prompt="@string/spinner_title" />
@@ -193,7 +194,7 @@
 
                 <TextView
                     android:id="@+id/btc_result"
-                    android:layout_width="128dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/dec_value"
                     android:textAppearance="?android:textAppearanceMedium"
@@ -202,7 +203,7 @@
 
                 <Spinner
                     android:id="@+id/btc_spinner"
-                    android:layout_width="63dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="42dp"
                     android:prompt="@string/spinner_title" />
             </LinearLayout>

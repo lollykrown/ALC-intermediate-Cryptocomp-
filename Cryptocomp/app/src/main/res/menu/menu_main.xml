@@ -5,10 +5,14 @@
     tools:context=".MainActivity">
 
     <item android:id="@+id/home"
-        android:title="Home"
-        app:showAsAction="always" />
+        android:title="@string/home"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/refresh"
+        android:title="@string/refresh"
+        app:showAsAction="never"/>
 
     <item android:id="@+id/exit"
-        android:title="Exit"
+        android:title="@string/exit"
         app:showAsAction="never"/>
 </menu>

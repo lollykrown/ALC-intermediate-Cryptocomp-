@@ -9,6 +9,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,7 +21,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<Curency>> {
+public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<Curency>>, SwipeRefreshLayout.OnRefreshListener{
 
     /** URL for cryptocompare data*/
     public static final String CRYPTOCOMP_URL = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,BTC&tsyms=USD,NGN,EUR,GBP,JPY,CNY,CHF,CAD,AUD,NZD,ZAR,INR,RUB,KRW,SEK,BRL,MXN,SGD,PLN,TRY";
@@ -33,6 +34,10 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     /** TextView that is displayed when the list is empty */
     private TextView mEmptyStateTextView;
+
+    /** Swipe refresh variable */
+    private SwipeRefreshLayout swipeContainer;
+
 
     /**variables for the various intent keys*/
     public static final String KEY_ETH_TAG = "ethTag";
@@ -49,6 +54,19 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Lookup the swipe container view
+        swipeContainer = findViewById(R.id.swipeToRefresh);
+
+        // Setup refresh listener which triggers new data loading
+        swipeContainer.setOnRefreshListener(this);
+
+        // Configure the refreshing colors
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
+
 
         // Find a reference to the {@link ListView} in the layout
         final ListView cur = findViewById(R.id.list);
@@ -85,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         });
 
         /**get the empty state textview and set it*/
-        mEmptyStateTextView = (TextView) findViewById(R.id.empty_view);
+        mEmptyStateTextView = findViewById(R.id.empty_view);
         cur.setEmptyView(mEmptyStateTextView);
 
         // Get a reference to the ConnectivityManager to check state of network connectivity
@@ -104,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             // the bundle. Pass in this activity for the LoaderCallbacks parameter (which is valid
             // because this activity implements the LoaderCallbacks interface).
             loaderManager.initLoader(CUR_LOADER_ID, null, this);
+
         } else {
             // Otherwise, display error
             // First, hide loading indicator so error message will be visible
@@ -141,14 +160,24 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         // data set. This will trigger the ListView to update.
         if (currencies != null && !currencies.isEmpty()) {
             mAdapter.addAll(currencies);
-        }
 
+            // Now we call setRefreshing(false) to signal refresh has finished
+            swipeContainer.setRefreshing(false);
+        }
     }
 
     @Override
-    public void onLoaderReset(Loader<List<com.example.android.cryptocomp.Curency>> loader) {
+    public void onLoaderReset(Loader<List<Curency>> loader) {
         //Loader reset, so we can clear out our existing data.
         mAdapter.clear();
+    }
+
+    /**
+     * Whenever swipe refresh starts we get callback here.Here we can place our logic.
+     */
+    @Override
+    public void onRefresh() {
+        getLoaderManager().restartLoader(CUR_LOADER_ID , null , this);
     }
 
     Menu menu;
@@ -171,6 +200,14 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         // as you specify a parent activity in AndroidManifest.xml
         switch (item.getItemId()) {
             case R.id.home:
+                return true;
+            case R.id.refresh:
+                // Signal SwipeRefreshLayout to start the progress indicator
+                swipeContainer.setRefreshing(true);
+
+                // Start the refresh background task.
+                // This method calls setRefreshing(false) when it's finished.
+                onRefresh();
                 return true;
             case R.id.exit:
                 finish();

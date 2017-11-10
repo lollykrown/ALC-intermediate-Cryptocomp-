@@ -149,8 +149,8 @@ public class ConversionActivity extends AppCompatActivity implements AdapterView
             @Override
             public void onClick(View v) {
 
-                ethField.setText("0");
-                btcField.setText("0");
+                ethField.setText("");
+                btcField.setText("");
                 ethResult.setText("0.00");
                 ethResult.setText("0.00");
             }
@@ -160,8 +160,8 @@ public class ConversionActivity extends AppCompatActivity implements AdapterView
             @Override
             public void onClick(View v) {
 
-                ethField.setText("0");
-                btcField.setText("0");
+                ethField.setText("");
+                btcField.setText("");
                 ethResult.setText("0.00");
                 ethResult.setText("0.00");
             }
@@ -190,10 +190,16 @@ public class ConversionActivity extends AppCompatActivity implements AdapterView
         startActivity(intent);
     }
 
+    Menu menu;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        this.menu = menu;
         // inflate the menu; this adds items to the action bar if it is present
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        MenuItem pinMenuItem2 = menu.findItem(R.id.refresh);
+
+        pinMenuItem2.setVisible(false);
         return true;
     }
 
@@ -204,7 +210,7 @@ public class ConversionActivity extends AppCompatActivity implements AdapterView
         // as you specify a parent activity in AndroidManifest.xml
         switch (item.getItemId()) {
             case R.id.home:
-                Toast.makeText(getApplicationContext(), "Home Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Goto Home page", Toast.LENGTH_SHORT).show();
                 onHomeClick();
                 return true;
             case R.id.exit:
