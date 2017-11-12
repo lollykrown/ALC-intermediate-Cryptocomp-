@@ -19,7 +19,9 @@ import android.widget.Toast;
 import java.text.DecimalFormat;
 
 import static com.example.android.cryptocomp.CurrencyAdapter.KEY_BTC_CUR;
+import static com.example.android.cryptocomp.CurrencyAdapter.KEY_BTC_TAG;
 import static com.example.android.cryptocomp.CurrencyAdapter.KEY_ETH_CUR;
+import static com.example.android.cryptocomp.CurrencyAdapter.KEY_ETH_TAG;
 import static com.example.android.cryptocomp.MainActivity.PREFS_NAME;
 /**
  * Created by Kayode Agboola on 01-Nov-17.
@@ -36,6 +38,8 @@ public class ConversionActivity extends AppCompatActivity implements AdapterView
     Button btcClearButton;
     private double result;
     private String resultString;
+    private TextView ethHeading;
+    private TextView btcHeading;
 
     SharedPreferences settings;
     int p;
@@ -55,6 +59,8 @@ public class ConversionActivity extends AppCompatActivity implements AdapterView
         btcConvertButton = findViewById(R.id.btc_convert_button);
         ethClearButton = findViewById(R.id.eth_clear_button);
         btcClearButton = findViewById(R.id.btc_clear_button);
+        ethHeading = findViewById(R.id.eth_heading);
+        btcHeading = findViewById(R.id.btc_heading);
 
         // Spinner click listener
         btcSpinner.setOnItemSelectedListener(this);
@@ -81,6 +87,11 @@ public class ConversionActivity extends AppCompatActivity implements AdapterView
         //load preference from the MainActivity
         settings = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         p = settings.getInt("p", 0);
+        int eth_tag = settings.getInt(KEY_ETH_TAG, 0);
+        int btc_tag = settings.getInt(KEY_BTC_TAG, 0);
+
+        ethHeading.setText(eth_tag);
+        btcHeading.setText(btc_tag);
 
         //sets spinner selection to user's list item selection
         ethSpinner.setSelection(p);

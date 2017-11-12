@@ -49,28 +49,29 @@
                 <LinearLayout
                     android:id="@+id/eth_amount_container"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="128dp"
                     android:layout_below="@id/eth_logo"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="24dp"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/eth_tag"
                         android:layout_width="match_parent"
-                        android:layout_height="44dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="top|center_horizontal"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:textColor="@color/faded_black"
-                        android:layout_centerHorizontal="true"
                         android:textStyle="bold"
                         tools:text="GBP "/>
 
                     <TextView
                         android:id="@+id/eth_amount"
                         android:layout_width="match_parent"
-                        android:layout_height="44dp"
-                        android:layout_centerHorizontal="true"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="bottom|center_horizontal"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:textColor="@android:color/holo_blue_dark"
                         android:textStyle="bold"
@@ -105,30 +106,31 @@
                 <LinearLayout
                     android:id="@+id/btc_amount_container"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="128dp"
                     android:layout_below="@id/btc_logo"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="24dp"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/btc_tag"
                         android:layout_width="match_parent"
-                        android:layout_height="44dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="top|center_horizontal"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:textColor="@color/faded_black"
-                        android:layout_centerHorizontal="true"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/btc_amount"
                         android:layout_width="match_parent"
-                        android:layout_height="44dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="bottom|center_horizontal"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:textColor="@color/colorAccent"
                         android:textColorHint="@color/light_blue"
-                        android:gravity="center_horizontal"
                         android:textStyle="bold"
                         tools:text="234" />
                 </LinearLayout>

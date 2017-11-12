@@ -7,7 +7,21 @@
     android:orientation="vertical"
     android:padding="24dp">
 
-        <LinearLayout
+
+    <TextView
+        android:id="@+id/eth_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="4dp"
+        android:textAllCaps="false"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="#303F9F"
+        android:textStyle="bold" />
+
+    <LinearLayout
             android:id="@+id/eth_calc_container"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -31,7 +45,7 @@
                     android:layout_marginRight="8dp"
                     android:layout_marginStart="4dp"
                     android:text="@string/from_eth"
-                    android:textAllCaps="true"
+                    android:textAllCaps="false"
                     android:textAppearance="?android:textAppearanceMedium"
                     android:textColor="@color/colorPrimary"
                     android:textStyle="bold" />
@@ -41,8 +55,8 @@
                     android:layout_width="128dp"
                     android:layout_height="42dp"
                     android:hint="@string/eth_hint"
-                    android:inputType="number"
-                    android:maxLength="5" />
+                    android:inputType="numberDecimal"
+                    android:maxLength="12" />
 
             </LinearLayout>
 
@@ -134,7 +148,22 @@
             android:layout_marginBottom="16dp"
             android:background="#303F9F" />
 
-        <LinearLayout
+
+    <TextView
+        android:id="@+id/btc_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="4dp"
+        android:textAllCaps="false"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
             android:id="@+id/btc_calc_container"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -157,7 +186,7 @@
                     android:layout_marginRight="8dp"
                     android:layout_marginStart="4dp"
                     android:text="@string/from_btc"
-                    android:textAllCaps="true"
+                    android:textAllCaps="false"
                     android:textAppearance="?android:textAppearanceMedium"
                     android:textColor="@color/colorPrimary"
                     android:textStyle="bold" />
@@ -167,8 +196,8 @@
                     android:layout_width="128dp"
                     android:layout_height="42dp"
                     android:hint="@string/btc_hint"
-                    android:inputType="number"
-                    android:maxLength="5" />
+                    android:inputType="numberDecimal"
+                    android:maxLength="12" />
 
             </LinearLayout>
 
